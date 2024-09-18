@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Task 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+            height: auto;         
+            background-color: #f0f0f0; 
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .inline-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .inline-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .form-buttons {
+                flex-direction: column;
+            }
+
+            input[type="submit"], input[type="reset"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1 style="text-align: center; margin-bottom: 20px;">Home Task 3 (Different Input Types Form)</h1>
+
+        <form action="/submit" method="post">
+            
+            
+            <!-- Text Input -->
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="firstname" placeholder="Jubair.." required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" id="pwd" name="password" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="jubair.developer@growbrandly.com" required>
+            </div>
+
+            <!-- Number Input -->
+            <div class="form-group">
+                <label for="quantity">Quantity (1-100):</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="100">
+            </div>
+
+            <!-- Date Input -->
+            <div class="form-group">
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+
+
+            <!-- Radio Buttons -->
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="inline-group">
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="form-group">
+                <label>Interests:</label>
+                <div class="inline-group">
+                    <input type="checkbox" id="sports" name="interests" value="sports">
+                    <label for="sports">Sports</label>
+
+                    <input type="checkbox" id="music" name="interests" value="music">
+                    <label for="music">Music</label>
+
+                    <input type="checkbox" id="reading" name="interests" value="reading">
+                    <label for="reading">Reading</label>
+                </div>
+            </div>
+
+            <!-- Dropdown Select -->
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="">Select your country</option>
+                    <option value="usa">United States of Ashulia</option>
+                    <option value="canada">Barisal</option>
+                    <option value="uk">Bangladesh</option>
+                    <option value="australia">Australia</option>
+                    
+                </select>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label for="bio">Biography:</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Tell us something about yourself..."></textarea>
+            </div>
+
+            <!-- File Upload -->
+            <div class="form-group">
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+            </div>
+
+            <!-- URL Input -->
+            <div class="form-group">
+                <label for="website">Website:</label>
+                <input type="url" id="website" name="website" placeholder="https://jubairsiyum.github.io/portfolio/">
+            </div>
+
+        
+
+            <!-- Submit and Reset Buttons -->
+            <div class="form-group form-buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
